@@ -1,0 +1,16 @@
+const mongoose = require("mongoose");
+
+
+
+const connectdb = async()=>{
+    try {
+         await mongoose.connect("mongodb://127.0.0.1:27017/event_db");
+
+         console.log("db connected");
+         
+    } catch (error) {
+        console.log("some connection issue",error);
+    }
+}
+
+module.exports  = connectdb;
